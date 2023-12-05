@@ -1,3 +1,4 @@
+let pokemonrespository=(function(){
 let pokemonlist = 
 [
     {//object1
@@ -32,25 +33,37 @@ let pokemonlist =
         height:"6", //feet
  
     }
-  ];
+  ]});
+
+       //getall function to return pokemonlist.
+  pokemonRepository.getAll(){
+    return pokemonlist;
+  }
+        //add(pokemon) function.
+  pokemonRepository.add(){
+   pokemonlist.push(pokemon);
+  }
+  pokemonRepository.getAll().forEach((pokemon) => {
+   pokemonRepository.addListItem(pokemon);})
+
+
 
   //---------------------Loop for pokemon list begins.---------------------
-
-    for (let i = 0; i < pokemonlist.length; i++)
-     {
-      let pokemon = pokemonlist[i];
-      let pokemontype = pokemonlist[i].type;
-      let pokemonheight = pokemonlist[i].height;
-      let pokemonrarity = pokemonlist[i].rarity;
-      let html = `<br>${pokemon.name}-<br>
-                    [${pokemontype}]:<br>
-                    ${pokemonheight},
-                    ${
-                      pokemonrarity = Legendary
-                    ? `Rarity: ${pokemonrarity} -Oh! a legendary`
-                    : `Rarity: ${pokemonrarity}.`
-                     }`;
+  //for (let i = 0; i < pokemonlist.length; i++)
+   //  {
+    //  let pokemon = pokemonlist[i];
+    //  let pokemontype = pokemonlist[i].type;
+    //  let pokemonheight = pokemonlist[i].height;
+    //  let pokemonrarity = pokemonlist[i].rarity;
+     // let html = `<br>${pokemon.name}-<br>
+     //               [${pokemontype}]:<br>
+     //               ${pokemonheight},
+     //               ${
+     //                 pokemonrarity = Legendary
+     //               ? `Rarity: ${pokemonrarity} -Oh! a legendary`
+     //               : `Rarity: ${pokemonrarity}.`
+     //                }`;
                     
                      
-      document.write(html);
-    }
+      //document.write(html);
+    //}
