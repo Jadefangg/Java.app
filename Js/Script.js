@@ -34,6 +34,7 @@ let pokemonlist =
  
     }
   ]});
+  let pokemon = []; //declaring pokemon as empty array.
 
        //getall function to return pokemonlist.
   pokemonRepository.getAll(){
@@ -45,6 +46,8 @@ let pokemonlist =
   }
   pokemonRepository.getAll().forEach((pokemon) => {
    pokemonRepository.addListItem(pokemon);})
+
+  
 
 
 
