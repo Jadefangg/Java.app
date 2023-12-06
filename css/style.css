@@ -1,0 +1,11 @@
+li {
+    list-style: none;
+  }
+  
+  .pokemon-button {
+    background-color: #a4eda7;
+    border: solid;
+    color: rgb(228, 36, 36);
+    padding: 10px;
+    text-align: center;
+  }

@@ -34,8 +34,8 @@ let pokemonlist =
  
     }
   ]});
-  let pokemon = []; //declaring pokemon as empty array.
-
+  let pokemon=[]; //empty array
+ 
        //getall function to return pokemonlist.
   pokemonRepository.getAll(){
     return pokemonlist;
@@ -47,10 +47,30 @@ let pokemonlist =
   pokemonRepository.getAll().forEach((pokemon) => {
    pokemonRepository.addListItem(pokemon);})
 
-  
+   function addListItem(pokemon){
+    let ulItem = document.querySelector(".pokemon-list");
+    let listItem = document.createElement("li");
+    let button = document.createElement("button");
+    
+    button.innerText = pokemon.name; //what is inside button
 
+    button.classList.add("pokemon-button");
 
+    listItem.appendChild(button);
+    ulItem.appendChild(listItem);
+   }
 
+    button.addEventListener("click", function () 
+    {
+      showDetails(pokemon.name);
+      button.innerText = pokemon.name;
+
+      button.classList.add("pokemon-button"); //css added to this
+
+       listItem.appendChild(button);
+       ulItem.appendChild(listItem);
+    }
+    )();
   //---------------------Loop for pokemon list begins.---------------------
   //for (let i = 0; i < pokemonlist.length; i++)
    //  {
