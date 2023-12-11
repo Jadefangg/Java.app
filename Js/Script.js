@@ -1,42 +1,9 @@
 let pokemonrespository=(function(){
-let pokemonlist = 
-[
-    {//object1
-    rarity: "Legendary",
-    name: "Lugia",
-    type: ["Psychic", "Flying"],
-    weight: "211",  //kg
-    height: "17",  //feet
-    
-    },
-    {//object2
-      rarity: "Legendary",
-      name: "Ho-oh",
-      type: ["Fire","Flying"],
-      weight: "200",  //kg    
-      height: "12",   //feet
-
-    },
-  {//object3
-        rarity: "Legendary",
-        name: "Celebi",
-        type: "Psychic,Grass",
-        weight: "5",    //kg
-        height: "2",    //feet
-
-  },
-    {//object4
-        rarity: "Normal",
-        name:"Pikachu",
-        type:"Electric",
-        weight:"1", //kg
-        height:"6", //feet
- 
-    }
-  ]});
-  let pokemon=[]; //empty array
- 
-       //getall function to return pokemonlist.
+let pokemonlist = [];
+let pokemonAPIurl='https://pokeapi.co/api/v2/pokemon/?limit=150';
+//-----------------------------------------------
+let pokemon=[]; //empty array
+     //getall function to return pokemonlist.
   pokemonRepository.getAll(){
     return pokemonlist;
   }
@@ -65,12 +32,40 @@ let pokemonlist =
       showDetails(pokemon.name);
       button.innerText = pokemon.name;
 
-      button.classList.add("pokemon-button"); //css added to this
+  button.classList.add("pokemon-button"); //css added to this
 
        listItem.appendChild(button);
        ulItem.appendChild(listItem);
     }
     )();
+    function loadList(){
+      return fetch(apiUrl).then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        json.results.forEach(function (item) {
+          let pokemon = {
+            name: item.name,
+            detailsUrl: item.url
+          };
+          add(pokemon);
+        });
+      }).catch(function (e) {
+        console.error(e);
+      })
+    }
+  
+    return {
+      add: add,
+      getAll: getAll,
+      loadList: loadList
+    };
+  })();
+  pokemonRepository.loadList().then(function() {
+    // Now the data is loaded
+    pokemonRepository.getAll().forEach(function(pokemon){
+      pokemonRepository.addListItem(pokemon);
+    });
+  });
   //---------------------Loop for pokemon list begins.---------------------
   //for (let i = 0; i < pokemonlist.length; i++)
    //  {
