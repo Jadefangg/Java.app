@@ -66,6 +66,66 @@ let pokemon=[]; //empty array
       pokemonRepository.addListItem(pokemon);
     });
   });
+
+      // --------------------------MODAL BEGINS--------------------------
+
+      function showmodal(pokemon){
+
+        let mcontainer = document.querySelector('#modalcontainer');
+        mcontainer.innerHTML=''; //clear all existing content
+        let modal = document.createElement('div');
+        modal.classList.add(modal);
+        let closebutton = document.createElement('closebutton');
+        closebutton.classList.add('modal-close');
+        closebutton.innerText=('close');
+        let title =document.createElement('h1');
+        title.innerText = title;
+        let content = document.createElement('p');
+        content.innerText = Text;
+
+        modal.appendChild=(closebutton);
+        modal.appendChild=(title);
+        modal.appendChild=(content);
+        mcontainer.appendChild(modal);
+        mcontainer.classList.add('is-visible');
+      }
+        document.querySelector('#show modal').addEventListener('click'), () => {
+          showmodal('modal title','this is a modal');
+      }
+        //hiding the modal.
+      function hidemodal(){
+        let mcontainer = document.querySelector('modalcontainer');
+        mcontainer.classlist.remove('is-visible');
+      }
+
+       let closebutton = document.createElement('closebutton');
+       closebutton.classlist.add('modal-close');
+       closebutton.innerText = 'close';
+       closebutton.addEventListener('click',hidemodal);
+
+      //escape button closes modal.
+       window.addEventListener('keydown', (e) => {
+        let modalContainer = document.querySelector('#modal-container');
+        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+          hideModal();  
+        }
+      });
+      modalContainer.addEventListener('click', (e) => {
+        let target = e.target;
+        if (target === modalContainer) {
+          hideModal();
+        }
+      });
+      //displaying properties of the pokemon.
+      function displayPropertiesofpokemon(pokemon, button) {
+        button.addEventListener('click', function () {
+            showDetails(pokemon);
+        });
+      } 
+
+      
+      
+        
   //---------------------Loop for pokemon list begins.---------------------
   //for (let i = 0; i < pokemonlist.length; i++)
    //  {
