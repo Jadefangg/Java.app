@@ -1,32 +1,33 @@
 let pokemonrespository=(function(){
 let pokemonlist = [];
-let pokemonAPIurl='https://pokeapi.co/api/v2/pokemon/?limit=150';
+let apiUrl='https://pokeapi.co/api/v2/pokemon/?limit=150';
+
 //-----------------------------------------------
-let pokemon=[]; //empty array
-     //getall function to return pokemonlist.
-  pokemonRepository.getAll(){
+
+/*let pokemon=[]; //empty array
+//getall function to return pokemonlist.
+  pokemonrespository.getAll(){
     return pokemonlist;
   }
         //add(pokemon) function.
-  pokemonRepository.add(){
+  pokemonrespository.add(){
    pokemonlist.push(pokemon);
   }
-  pokemonRepository.getAll().forEach((pokemon) => {
-   pokemonRepository.addListItem(pokemon);})
+  pokemonrespository.getAll().forEach((pokemon) => {
+   pokemonrespository.addListItem(pokemon);})
 
    function addListItem(pokemon){
     let ulItem = document.querySelector(".pokemon-list");
     let listItem = document.createElement("li");
     let button = document.createElement("button");
     
-    button.innerText = pokemon.name; //what is inside button
+    button.innerText = pokemon.name; //what goes inside button
 
     button.classList.add("pokemon-button");
 
     listItem.appendChild(button);
     ulItem.appendChild(listItem);
    }
-
     button.addEventListener("click", function () 
     {
       showDetails(pokemon.name);
@@ -66,8 +67,13 @@ let pokemon=[]; //empty array
       pokemonRepository.addListItem(pokemon);
     });
   });
+  function displayPropertiesofpokemon(pokemon, button) {
+    button.addEventListener('click', function () {
+        showDetails(pokemon);
+    });
+  } 
 
-      // --------------------------MODAL BEGINS--------------------------
+      /* --------------------------MODAL BEGINS--------------------------
 
       function showmodal(pokemon){
 
@@ -115,13 +121,10 @@ let pokemon=[]; //empty array
         if (target === modalContainer) {
           hideModal();
         }
-      });
+      });*/
+
       //displaying properties of the pokemon.
-      function displayPropertiesofpokemon(pokemon, button) {
-        button.addEventListener('click', function () {
-            showDetails(pokemon);
-        });
-      } 
+    
 
       
       
@@ -144,4 +147,4 @@ let pokemon=[]; //empty array
                     
                      
       //document.write(html);
-    //}
+    //} */
