@@ -1,6 +1,6 @@
-const pokedex = document.getElementById('pokedex');
+const pokedex = document.getElementById('pokedex'); //declared under id in html
 
-const fetchPokemon = () => {
+const fetchPokemon = () => {    //empty array
 
     const promises = [];
     for (let i = 1; i <= 150; i++) {
@@ -26,18 +26,16 @@ const displayPokemon = (pokemon) => {
     console.log(pokemon);
     const pokemonHTMLString = pokemon
         .map(
-            (pokeman) => `
-            
-        <li class="card">
+            (pokeman) => 
+            `
+             <li class="card">
             <img class="card-image" src="${pokeman.image}"/>
             <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
             <p class="card-subtitle">Type: ${pokeman.type}</p>
             <button class = "btn" type="button" data-toggle="modal" data-target="modalopen"> Info! </button>
-        </li>
-    `
+        </li> `
         )
         .join('');
-    pokedex.innerHTML = pokemonHTMLString;
-};
-
+        pokedex.innerHTML = pokemonHTMLString;
+}
 fetchPokemon();
