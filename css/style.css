@@ -9,13 +9,13 @@ body {
     padding: 40px;
     margin: 0 auto;
 }
-.btnp{
+/*.btnp{
     position: relative;
     background-color: #666;
   color : yellow;
   margin: 10px;
   border-radius: 40%;
-}
+}*/
 
 h1 {
     text-transform: uppercase;
@@ -39,9 +39,10 @@ h1 {
   text-align: center;
 }
 
+
 .card:hover {
     animation: bounce 0.7s linear;
-    border-radius: 32% ;
+   
 }
 
 .card-title {
@@ -51,8 +52,10 @@ h1 {
     font-weight: normal;
 }
 .card-subtitle {
+    border-radius: 30px;
+    
     margin-top: 5px;
-    color: beige;
+    color: goldenrod;
     font-weight: lighter;
     font-family: fantasy;
 }
@@ -61,6 +64,22 @@ h1 {
     height: 180px;
 }
 
+.open-button{
+    border-radius: 25px;
+    background-color: darkolivegreen;
+}
+
+#modal{
+    text-align: center;
+    border: solid;
+    border-radius: 20px ;
+    background-color: purple;
+}
+#modal::backdrop{
+    background-color: darkgreen;
+    
+    opacity: .5;
+}
 @keyframes bounce {
     20% {
         transform: translateY(-6px);
