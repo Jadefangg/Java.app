@@ -31,10 +31,9 @@ const displayPokemon = (pokemon) => {
             <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
             <p class="card-subtitle">Type: ${pokeman.type}</p>
             <button class="button open-button">open modal</button>
-        <dialog class="modal" id="modal">
-            <h2>An interesting title</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum esse nisi, laboriosam illum temporibus ipsam?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, quo.</p>
+            <dialog class="modal" id="modal">
+            <h2>${pokeman.type}</h2>
+            
             <button class="button close-button">close modal</button>
         </dialog>
        
