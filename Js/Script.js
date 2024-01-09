@@ -1,4 +1,7 @@
 const pokedex = document.getElementById('pokedex'); //declared under id in html
+const modal=document.querySelector("#modal");
+const openModal=document.querySelector('.open-button')
+const closeModal = document.querySelector(".close-button");
 
 const fetchPokemon = () => {    //empty array
 
@@ -28,14 +31,18 @@ const displayPokemon = (pokemon) => {
         .map(
             (pokeman) => 
             `
-             <li class="card">
+        <li class="card">
             <img class="card-image" src="${pokeman.image}"/>
             <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
             <p class="card-subtitle">Type: ${pokeman.type}</p>
-            <button class = "btn" type="button" data-toggle="modal" data-target="modalopen"> Info! </button>
+                openModal.addEventlistener('click',() =>{
+                modal.showModal();
+        
         </li> `
         )
         .join('');
         pokedex.innerHTML = pokemonHTMLString;
 }
+   
+
 fetchPokemon();

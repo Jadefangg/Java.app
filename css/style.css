@@ -9,9 +9,12 @@ body {
     padding: 40px;
     margin: 0 auto;
 }
-.btn{
+.btnp{
+    position: relative;
+    background-color: #666;
   color : yellow;
   margin: 10px;
+  border-radius: 40%;
 }
 
 h1 {
@@ -37,7 +40,8 @@ h1 {
 }
 
 .card:hover {
-    animation: bounce 0.2s linear;
+    animation: bounce 0.7s linear;
+    border-radius: 32% ;
 }
 
 .card-title {
@@ -48,8 +52,9 @@ h1 {
 }
 .card-subtitle {
     margin-top: 5px;
-    color: #666;
+    color: beige;
     font-weight: lighter;
+    font-family: fantasy;
 }
 
 .card-image {
