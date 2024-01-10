@@ -9,13 +9,12 @@ body {
     padding: 40px;
     margin: 0 auto;
 }
-/*.btnp{
-    position: relative;
-    background-color: #666;
-  color : yellow;
-  margin: 10px;
-  border-radius: 40%;
-}*/
+.btn{
+    color: aliceblue;
+    font-family: monospace;
+    border-radius: 30px;
+    background-color: darkmagenta;
+}
 
 h1 {
     text-transform: uppercase;
@@ -64,6 +63,12 @@ h1 {
     height: 180px;
 }
 
+.open-button2{
+    color: aliceblue;
+    font-family: monospace;
+    border-radius: 30px;
+    background-color: darkmagenta;
+}
 .open-button{
     border-radius: 25px;
     background-color: darkolivegreen;
