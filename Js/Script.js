@@ -10,64 +10,45 @@ const fetchPokemon = () => {    //empty array
         promises.push(fetch(url).then((res) => res.json()));
     }
     Promise.all(promises).then((results) => {
-        const pokemon = results.map((result) => ({       //the categories being defined here for a more convenient peice of code
+        const pokemon = results.map((result) => ({       //the categories are being defined here for a more convenient peice of code.
              name: result.name,
              image: result.sprites['front_default'],
-             type: result.types.map((type) => type.type.name).join(', '),
+             type: result.types.map((type) => type.type.name).join(','),
              id: result.id
         }));
         displayPokemon(pokemon);
     });
 };
 
+
+
 const displayPokemon = (pokemon) => {
     console.log(pokemon);
-    const pokemonHTMLString = pokemon
-        .map(
-            (pokeman) => 
-            `
-        <li class="card">
+    const pokemonHTMLString = pokemon.map((pokeman, index) => {
+        return `
+            <li class="card">
             <img class="card-image" src="${pokeman.image}"/>
-            <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
-            <p class="card-subtitle">Type: ${pokeman.type}</p>
-           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+        <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
+        <p class="card-subtitle">Type: Click below for more info! </p>
 
-           <!-- Modal -->
-           <div id="myModal" class="modal fade" role="dialog">
-             <div class="modal-dialog">
-           
-               <!-- Modal content-->
-               <div class="modal-content">
-                 <div class="modal-header">
-                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                   <h4 class="modal-title">Modal Header</h4>
-                 </div>
-                 <div class="modal-body">
-                   <p>${pokeman.type}</p>
-                 </div>
-                 <div class="modal-footer">
-                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                 </div>
-               </div>
-           
-             </div>
-           </div>
-       </li> 
-       `
-        )
+                <button class="btn open-button" data-index="${index}">Poke-Info!</button> 
+                <dialog class="modal" id="modal-${index}">
+                    <div class="modal-content">
+                    <p>${pokeman.name} is a ${pokeman.type} type Pokemon.</p>
+                    </div>  
+                </dialog>
+            </li>    
+        `;
+    }).join('');
         
-        .join('');
-        // const declared for the new modal which should display each pokemons type, along witht he declaration of the new openmodal2 and new closemodal2
-       
-        
+    pokedex.innerHTML = pokemonHTMLString;
 
-        openModal.addEventListener("click", () => {
+    const openButtons = document.querySelectorAll('.open-button');
+    openButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            const modal = document.querySelector(`#modal-${index}`);
             modal.showModal();
-          });
-          closeModal.addEventListener("click", () => {
-            modal.close();
-          });
-          
-        pokedex.innerHTML = pokemonHTMLString;
-}
+        });
+    });
+};
    fetchPokemon();

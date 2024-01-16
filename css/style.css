@@ -1,5 +1,5 @@
 body {
-    background-color: orangered;
+    background-color: cornflowerblue;
     color: white;
     margin: 0;
     font-family: rubik;
@@ -10,7 +10,7 @@ body {
     margin: 0 auto;
 }
 .btn{
-    color: aliceblue;
+    color: salmon;
     font-family: monospace;
     border-radius: 30px;
     background-color: darkmagenta;
@@ -40,7 +40,7 @@ h1 {
 
 
 .card:hover {
-    animation: bounce 0.7s linear;
+    animation: bounce 0.4s linear;
    
 }
 
@@ -61,30 +61,31 @@ h1 {
 
 .card-image {
     height: 180px;
+   
 }
 
-.open-button2{
-    color: aliceblue;
-    font-family: monospace;
-    border-radius: 30px;
-    background-color: darkmagenta;
-}
+
+
 .open-button{
     border-radius: 25px;
     background-color: darkolivegreen;
+    font-family: monospace;
 }
 
-#modal{
+
+
+.modal{
     text-align: center;
     border: solid;
     border-radius: 20px ;
     background-color: purple;
 }
-#modal::backdrop{
+.modal::backdrop{
     background-color: darkgreen;
     
     opacity: .5;
 }
+
 @keyframes bounce {
     20% {
         transform: translateY(-6px);
