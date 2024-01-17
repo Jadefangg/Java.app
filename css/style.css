@@ -1,101 +1,96 @@
-body {
-    background-color: cornflowerblue;
-    color: white;
-    margin: 0;
-    font-family: rubik;
-}
+
+#modalbutton{
+    background-color:burlywood;
+font-family: monospace;
+color: maroon;
+border: solid;
+border-radius: 30px;}
 
 .pokedex-content {
-    padding: 40px;
+    padding: 3px;
     margin: 0 auto;
-}
-.btn{
-    color: salmon;
-    font-family: monospace;
-    border-radius: 30px;
-    background-color: darkmagenta;
+    background-color: #606d26;
 }
 
-h1 {
-    text-transform: uppercase;
+.modal {
+    position: relative;
     text-align: center;
-    font-size: 54px;
+    border: solid;
     
 }
 
-#pokedex {
+h2{
+    color: orange;
+}
+h1 {
+
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 54px;
+    color: cornflowerblue;
+    
+}
+
+#pokedex {   
+    margin: 20px;
+    border-radius: 40px;
+   background: linear-gradient(to right, rgb(33, 1, 33),rgb(94, 4, 4),rgb(0, 14, 0) );
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-gap: 20px;
     padding-inline-start: 0;
+    
 }
 
-.card { border-radius:35%;
-    list-style: none;
-    padding: 40px;
-    background-color: maroon;
-    color: #222;
-  text-align: center;
+#mycard{ 
+    padding: 60px;
+    margin: 40px;
+    align-self: center;
+    background-color: rgb(12, 91, 34);
+    border-radius: 45%;
+    
 }
-
-
 .card:hover {
-    animation: bounce 0.4s linear;
+    animation: bounce 0.2s linear;
    
 }
 
 .card-title {
+    text-align: center;
+    color: #5cb85c;
     text-transform: capitalize;
     margin-bottom: 0px;
+    font-family: monospace;
     font-size: 32px;
     font-weight: normal;
 }
 .card-subtitle {
     border-radius: 30px;
-    
+    text-align: center;
     margin-top: 5px;
-    color: goldenrod;
+    color: salmon;
     font-weight: lighter;
     font-family: fantasy;
 }
 
 .card-image {
-    height: 180px;
+    align-self: auto    ;
    
 }
 
 
 
-.open-button{
-    border-radius: 25px;
-    background-color: darkolivegreen;
-    font-family: monospace;
-}
-
-
-
-.modal{
-    text-align: center;
-    border: solid;
-    border-radius: 20px ;
-    background-color: purple;
-}
-.modal::backdrop{
-    background-color: darkgreen;
-    
-    opacity: .5;
-}
 
 @keyframes bounce {
     20% {
-        transform: translateY(-6px);
+        transform: translateY(-18px);
     }
     40% {
         transform: translateY(0px);
     }
 
     80% {
-        transform: translateY(-2px);
+        transform: translateY(-8px);
     }
     100% {
         transform: translateY(0);

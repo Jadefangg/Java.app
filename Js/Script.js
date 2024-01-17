@@ -26,29 +26,32 @@ const displayPokemon = (pokemon) => {
     console.log(pokemon);
     const pokemonHTMLString = pokemon.map((pokeman, index) => {
         return `
-            <li class="card">
-            <img class="card-image" src="${pokeman.image}"/>
+        <li class="card" id="mycard">
+        <img class="card-image" src="${pokeman.image}"/>
         <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
-        <p class="card-subtitle">Type: Click below for more info! </p>
+        <p class="card-subtitle">Type: ${pokeman.type}</p>
 
-                <button class="btn open-button" data-index="${index}">Poke-Info!</button> 
-                <dialog class="modal" id="modal-${index}">
-                    <div class="modal-content">
-                    <p>${pokeman.name} is a ${pokeman.type} type Pokemon.</p>
-                    </div>  
-                </dialog>
-            </li>    
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn" id="modalbutton" data-toggle="modal" data-target="#myModal-${index}">Poke-Info!</button>
+        
+        <!-- Modal -->
+        <div id="myModal-${index}" class="modal modalp" role="dialog">
+              <h2>${pokeman.name} is a </h2>
+              <h2>${pokeman.type} type pokemon</h2>
+              </div>
+    </li>    
         `;
     }).join('');
         
     pokedex.innerHTML = pokemonHTMLString;
-
-    const openButtons = document.querySelectorAll('.open-button');
-    openButtons.forEach((button, index) => {
-        button.addEventListener("click", () => {
-            const modal = document.querySelector(`#modal-${index}`);
-            modal.showModal();
+     // Add event listeners to the buttons
+     pokemon.forEach((pokeman, index) => {  
+        document.getElementById(`openModal-${index}`).addEventListener('click', () => {
+            $(`#myModal-${index}`).modal('show');
         });
     });
+
+  
 };
-   fetchPokemon();
+
+fetchPokemon();
