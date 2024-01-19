@@ -19,9 +19,6 @@ const fetchPokemon = () => {    //empty array
         displayPokemon(pokemon);
     });
 };
-
-
-
 const displayPokemon = (pokemon) => {
     console.log(pokemon);
     const pokemonHTMLString = pokemon.map((pokeman, index) => {
